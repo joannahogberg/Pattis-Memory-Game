@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pattis Memory</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="events.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>–– PATTIS MEMORY GAME ––</h1>
+    </header>
+    <main>
+        <div id="userInfo">
+            <p>Your points:<span id="userTotPoints">0</span></p>
+            <div id="userMoreInfo">
+                <p>Games played:<span id="userCountGames">0</span></p>
+                <p>Avarage points:<span id="userMeanPoints">0</span></p>
+            </div>
+            <p><a href="#">SHOW MORE</a></p>
+        </div>
+        <p>Start playing by clicking the <strong>START GAME</strong> button. Turn two bricks and then click the <strong>NEXT</strong> button, When a pair is found the bricks will be removed. Continue until all pairs have been found. Your score will be based
+            on the amount of times the bricks have been turned. Max score is 20 points.</p>
+        <p>You can continue playing to collect more points. <strong>Have fun!</strong></p>
+
+        <form>
+            <!--  <p>Number of bricks: -->
+            <select id="nrOfBricksMenu">
+				<option selected>4x4</option>
+		 <!-- 		<option>5x4</option>
+				<option>6x4</option>
+				<option>6x5</option>
+				<option>6x6</option> -->
+			</select>
+            <button type="button" id="startGameBtn">START GAME</button>
+        </form>
+        <div id="bricks">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <!--
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+            <img src="pics/backside.png" alt="spelbricka" class="brickBack">
+-->
+        </div>
+        <!-- End bricks -->
+        <div id="turnInfo">
+
+            <p>Number of times a pair of bricks have been turned: <span id="turnNr">0</span></p>
+        </div>
+        <button type="button" id="nextBtn">NEXT</button>
+        <div id="message"></div>
+        <!-- Här skriver programmet meddelanden till användaren -->
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

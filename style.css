@@ -1,0 +1,169 @@
+@charset "UTF-8";
+html,
+body,
+header,
+nav,
+main,
+footer,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgray;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: black;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+main {
+    padding: 5px;
+}
+
+footer {
+    padding: 5px 10px;
+    border-top: 1px solid #666;
+    margin-top: 20px;
+    color: #333;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+#userInfo {
+    float: right;
+    width: 120px;
+    padding: 10px;
+    text-align: right;
+    margin-left: 40px;
+    margin-bottom: 80px;
+    background-color: darkgray;
+    border: 3px solid #666;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+#userInfo span {
+    display: block;
+    font-size: 2em;
+}
+
+#userMoreInfo {
+    display: none;
+}
+
+#userInfo a {
+    font-size: 0.8em;
+    font-style: italic;
+    color: white;
+}
+
+#turnInfo {
+    float: left;
+    width: 350px;
+}
+
+#startGameBtn {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+#nextBtn {
+    margin: 10px;
+    font-size: 1.2em;
+    background-color: whitesmoke;
+    border: 2px outset lightgray;
+    border-radius: 5px;
+}
+
+#nextBtn:hover {
+    background-color: darkgray;
+    border-style: inset;
+}
+
+#message {
+    padding-top: 2px;
+    font-size: 1.2em;
+    clear: both;
+}
+
+#nrOfBricksMenu {
+    margin-right: 20px;
+    display: none;
+}
+
+#bricks {
+    width: 320px;
+    margin-bottom: 5px;
+}
+
+
+/* Elementet där alla brickor finns */
+
+#bricks:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#bricks img {
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 2px;
+}
+
+
+/* Varje bricka är en img-tagg */
+
+
+/* Olika classer för img-taggarna, beroende på hur brickan visas */
+
+
+/* Förutom att byta bild i img-taggen, ska du också växla mellan dessa classer. */
+
+.brickBack {
+    border: 3px outset #666;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+/* Stil för brick där baksidan viss */
+
+.brickFront {
+    border: 3px outset lightgreen;
+    background-color: #FFF;
+    padding: 0;
+    cursor: default;
+}
+
+
+/* Stil för bricka där bilden visas */
+
+.brickEmpty {
+    border: none;
+    padding: 3px;
+    cursor: default;
+}
+
+
+/* Stil för borttagen bricka */
+
+.brickBack:hover {
+    transform: rotate(-2deg);
+}
