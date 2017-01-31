@@ -173,7 +173,7 @@ footer {
 
 @media screen and (max-width:450px) {
     #bricks {
-        width: 420px;
+        width: 100%;
         margin-top: 2em;
     }
 }
