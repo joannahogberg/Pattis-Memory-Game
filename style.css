@@ -169,3 +169,11 @@ footer {
 .brickBack:hover {
     transform: rotate(-2deg);
 }
+
+
+@media screen and (max-width:400px) {
+    #bricks {
+        width: 100%;
+        margin-top: 2em;
+    }
+}
