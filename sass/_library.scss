@@ -1,0 +1,174 @@
+/* Sass variables*/
+
+$black: #000000;
+$celeste: #49fee3;
+$red: #9C2542;
+$heading-font: 'Fredoka One',
+cursive;
+$text-font: 'Montserrat',
+sans-serif;
+
+/*------------- Heading mixins*/
+
+@mixin heading {
+    font-family: $heading-font;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@mixin head-1 {
+    @include heading;
+    font-size: 2em;
+}
+
+@mixin head-2 {
+    @include heading;
+    font-size: 1.5em;
+}
+
+@mixin head-3 {
+    @include heading;
+    font-size: 1.2em;
+}
+
+@mixin head-4 {
+    @include heading;
+    font-size: 1em;
+}
+
+@mixin head-5 {
+    @include heading;
+    font-size: 0.75em;
+}
+
+@mixin head-6 {
+    @include heading;
+    font-size: 0.5em;
+}
+
+
+/*------------- Breakpoints mixin*/
+
+$breakpoints: ( 'xxsmall': ( min-width: 360px), 'xsmall': ( min-width: 375px), 'small': ( min-width: 464px), 'medium': ( min-width: 650px), 'large': ( min-width: 800px), 'xlarge': ( min-width: 1200px));
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media #{inspect(map-get($breakpoints, $name))} {
+            @content;
+        }
+    }
+    @else {
+        @warn "No breakpoint with this name `#{$name}`.";
+    }
+}
+
+
+/*------------- Flexbox mixins*/
+
+// Flexbox display
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex: $values;
+    -webkit-flex: $values;
+    -ms-flex: $values;
+    flex: $values;
+}
+
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+// <number>
+@mixin flex-grow($grow) {
+    -webkit-flex-grow: $grow;
+    -moz-flex-grow: $grow;
+    -ms-flex-grow: $grow;
+    flex-grow: $grow;
+}
+
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
+
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+}
+
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+}
+
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    -ms-align-self: $align;
+    align-self: $align;
+}
+
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+
+/*------------- Flexbox center mixin*/
+
+@mixin flex-center() {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+// Mixin for opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Mixin for buttons with background transparent 
+@mixin transparent-backgound($color: #fff, $value:0.5) {
+    $start: "rgb(";
+    $end: ")";
+    background: #{$start}red($color),
+    green($color),
+    blue($color)#{$end};
+    background: rgba($color, $value);
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}

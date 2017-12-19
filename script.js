@@ -12,6 +12,7 @@ var formElem; // Ref till elem för antal valda brickor för spelet
 var userAverageElem; // Ref till snittpoäng
 var showMore; // Array med ref till a-elem i div-elementet userInfo
 var userInfoElem; // Ref till elem för den data som sparas
+var bricks;
 
 var gamesPlayed; // "Räknare" för antal gånger användaren spelat
 var picsArr; // Array med alla bilder
@@ -42,6 +43,8 @@ function init() {
 
     showSavedUserInfo(); // Anropar funktion för att visa lagrad användarinfo
 
+    bricks = document.getElementById("bricks");
+
     brickElems = document.getElementById("bricks").getElementsByTagName("img"); // Array med ref till img-elem
 
     turnNrElem = document.getElementById("turnNr");
@@ -50,8 +53,9 @@ function init() {
 
 
     formElem = document.getElementById("nrOfBricksMenu");
-    //addListener(formElem,"change", numberOfBricks);
+    addListener(formElem, "change", numberOfBricks);
 
+    // bricks.style.display = "none";
 
     // Lägger på klick-händelse på a-taggen och kopplar till funktionen för att visa och dölja userMoreInfo
     showMore = document.getElementById("userInfo").getElementsByTagName("a");
@@ -71,24 +75,24 @@ function init() {
 
 addListener(window, "load", init); // Se till att init aktiveras då sidan är inladdad
 
-/*
+
 //Funktion för att ta fram värdet av antalet brickor användaren vill spela med
-function numberOfBricks(){
-	var selIndex;
-	var nrBricks;
-	selIndex = formElem.selectedIndex;
-	//Lägger in value för antalet valda brickor ????
-	for (i=0; i<formElem.length; i++){
-		formElem[0].value=16;
-		formElem[1].value=20;
-		formElem[2].value=24;
-		formElem[3].value=30;
-		formElem[4].value=36;
-	}
-	nrBricks = Number(formElem.options[selIndex].value);
-	msgElem.innerHTML = nrBricks;
+function numberOfBricks() {
+    var selIndex;
+    var nrBricks;
+    selIndex = formElem.selectedIndex;
+    //Lägger in value för antalet valda brickor ????
+    for (i = 0; i < formElem.length; i++) {
+        formElem[0].value = 16;
+        formElem[1].value = 20;
+        formElem[2].value = 24;
+        formElem[3].value = 30;
+        formElem[4].value = 36;
+    }
+    nrBricks = Number(formElem.options[selIndex].value);
+    msgElem.innerHTML = nrBricks;
 }
-*/
+
 
 // Funktion för att starta spelet och ta fram slumpmässiga bilder som via händelsehanterare visas då man "flippar" en bricka
 function startGame() {
@@ -97,7 +101,7 @@ function startGame() {
     pairs = 0; // Vid ny omgång sätts pairs till 0
     gamesPlayed += 1; // Räknar upp varje gång en ny omgång startats
 
-    picsArr = ["0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7" /*, "8", "8", "9", "9", "10","10", "11", "11" "12", "12" "13", "13", "14","14", "15","15" "16","16" "17", "17", "18", "18", "19", "19","20","20" */ ]; //Array för alla bilder
+    picsArr = ["0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "10", "10", "11", "11", "12", "12", "13", "13", "14", "14", "15", "15", "16", "16", "17", "17", "18", "18"]; //Array för alla bilder
 
     startGameBtn.disabled = true; // Inaktiverar startGameBtn då nytt spel startas
     formElem.disabled = true; // Inaktiverar menyn för att välja antal brickor då nytt spel startats

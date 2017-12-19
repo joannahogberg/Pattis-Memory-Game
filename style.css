@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/* Sass variables*/
+/*------------- Heading mixins*/
+/*------------- Breakpoints mixin*/
+/*------------- Flexbox mixins*/
+/*------------- Flexbox center mixin*/
 html,
 body,
 header,
@@ -6,174 +11,157 @@ nav,
 main,
 footer,
 div {
-    margin: 0;
-    padding: 0;
-}
+  margin: 0;
+  padding: 0; }
 
 body {
-    background-color: lightgray;
-    color: #000;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    max-width: 900px;
-    margin: 0 auto;
-}
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  max-width: 900px;
+  margin: 0 auto; }
 
 header {
-    background-color: black;
-    color: #FFF;
-    padding: 20px;
-    text-align: center;
-}
+  background-color: black;
+  color: #FFF;
+  padding: 20px;
+  text-align: center; }
 
 header h1 {
-    margin: 0;
-    font-size: 3em;
-}
+  margin: 0;
+  font-size: 3em; }
 
 main {
-    padding: 5px;
-}
+  padding: 5px; }
 
 footer {
-    background-color: lightgray;
-    padding: 5px 10px;
-    border-top: 1px solid #666;
-    margin-top: 20px;
-    color: #FFF;
-    font-size: 0.8em;
-    font-style: italic;
-    text-align: center;
-}
+  padding: 5px 10px;
+  border-top: 1px solid #666;
+  margin-top: 20px;
+  color: #FFF;
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: center; }
 
 #userInfo {
-    float: right;
-    width: 120px;
-    padding: 10px;
-    text-align: right;
-    margin-left: 40px;
-    margin-bottom: 80px;
-    background-color: darkgray;
-    border: 3px solid #666;
-    border-radius: 5px;
-    margin-top: 12px;
-}
+  float: right;
+  width: 120px;
+  padding: 10px;
+  text-align: right;
+  margin-left: 40px;
+  margin-bottom: 80px;
+  background-color: darkgray;
+  border: 3px solid #666;
+  border-radius: 5px;
+  margin-top: 12px; }
 
 #userInfo span {
-    display: block;
-    font-size: 2em;
-}
+  display: block;
+  font-size: 2em; }
 
 #userMoreInfo {
-    display: none;
-}
+  display: none; }
 
 #userInfo a {
-    font-size: 0.8em;
-    font-style: italic;
-    color: white;
-}
+  font-size: 0.8em;
+  font-style: italic;
+  color: white; }
 
 #turnInfo {
-    float: left;
-    width: 350px;
-}
+  float: left;
+  width: 350px;
+  margin: 2em 0; }
 
-#startGameBtn {
-    margin-bottom: 15px;
-    font-size: 1em;
-}
-
+#startGameBtn,
 #nextBtn {
-    margin: 10px;
-    font-size: 1.2em;
-    background-color: whitesmoke;
-    border: 2px outset lightgray;
-    border-radius: 5px;
-}
+  padding: 0.5em 1em 0.5em;
+  font-size: 1em;
+  margin: 2em 0;
+  background: #49fee3;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 2px; }
 
 #nextBtn:hover {
-    background-color: darkgray;
-    border-style: inset;
-}
+  background-color: white;
+  border-style: inset; }
 
 #message {
-    padding-top: 2px;
-    font-size: 1.2em;
-    clear: both;
-}
+  padding-top: 2px;
+  font-size: 1.2em;
+  clear: both; }
 
 #nrOfBricksMenu {
-    margin-right: 20px;
-    display: none;
-}
+  margin-right: 20px; }
 
 #bricks {
-    width: 320px;
-    margin-bottom: 5px;
-}
-
+  width: 320px;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 /* Elementet där alla brickor finns */
-
 #bricks:after {
-    content: "";
-    clear: both;
-    display: block;
-}
+  content: "";
+  clear: both;
+  display: block; }
 
 #bricks img {
-    float: left;
-    width: 70px;
-    height: 70px;
-    margin: 2px;
-}
-
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin: 2px; }
 
 /* Varje bricka är en img-tagg */
-
-
 /* Olika classer för img-taggarna, beroende på hur brickan visas */
-
-
 /* Förutom att byta bild i img-taggen, ska du också växla mellan dessa classer. */
-
 .brickBack {
-    border: 3px outset #666;
-    padding: 0;
-    cursor: pointer;
-}
-
+  border: 3px outset #666;
+  padding: 0;
+  cursor: pointer; }
 
 /* Stil för brick där baksidan viss */
-
 .brickFront {
-    border: 3px outset lightgreen;
-    background-color: #FFF;
-    padding: 0;
-    cursor: default;
-}
-
+  border: 3px outset #49fee3;
+  background-color: #FFF;
+  padding: 0;
+  cursor: default; }
 
 /* Stil för bricka där bilden visas */
-
 .brickEmpty {
-    border: none;
-    padding: 3px;
-    cursor: default;
-}
-
+  border: none;
+  padding: 3px;
+  cursor: default; }
 
 /* Stil för borttagen bricka */
-
 .brickBack:hover {
-    transform: rotate(-2deg);
-}
+  opacity: 0.7; }
 
+@media screen and (max-width: 750px) {
+  #bricks {
+    width: 100%;
+    margin-top: 2em; }
 
-@media screen and (max-width:450px) {
-    #bricks {
-        width: 100%;
-        margin-top: 2em;
-    }
-}
+  #bricks img {
+    width: 20%;
+    height: 20%;
+    float: none; }
+
+  #startGameBtn,
+  #nextBtn {
+    margin: 0.5em 0; } }
+
+/*# sourceMappingURL=style.css.map */
