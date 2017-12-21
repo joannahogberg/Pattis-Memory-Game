@@ -18,7 +18,7 @@ body {
   color: #000;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  max-width: 900px;
+  max-width: 1024px;
   margin: 0 auto; }
 
 header {
@@ -98,6 +98,7 @@ footer {
 
 #bricks {
   width: 100%;
+  max-width: 900px;
   margin-bottom: 5px;
   display: -webkit-box;
   display: -moz-box;
@@ -111,7 +112,12 @@ footer {
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
 
 /* Elementet där alla brickor finns */
 #bricks:after {

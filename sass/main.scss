@@ -14,7 +14,7 @@ body {
     color: #000;
     font-family: $text-font;
     font-size: 12px;
-    max-width: 900px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
@@ -108,10 +108,12 @@ footer {
 
 #bricks {
     width: 100%;
+    max-width: 900px;
     margin-bottom: 5px;
     @include flexbox;
     @include flex-direction(row);
     @include flex-wrap(wrap);
+    @include justify-content(center);
 }
 
 
