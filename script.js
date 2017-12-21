@@ -13,7 +13,7 @@ var userAverageElem; // Ref till snittpoäng
 var showMore; // Array med ref till a-elem i div-elementet userInfo
 var userInfoElem; // Ref till elem för den data som sparas
 var bricks;
-
+var img;
 var gamesPlayed; // "Räknare" för antal gånger användaren spelat
 var picsArr; // Array med alla bilder
 var nextBrickNr; // "Räknare" för antal brickor som vänts
@@ -43,6 +43,7 @@ function init() {
 
     showSavedUserInfo(); // Anropar funktion för att visa lagrad användarinfo
 
+
     bricks = document.getElementById("bricks");
 
     brickElems = document.getElementById("bricks").getElementsByTagName("img"); // Array med ref till img-elem
@@ -70,6 +71,7 @@ function init() {
     startGameBtn.disabled = false;
     nextBtn.disabled = true;
     formElem.disabled = false;
+    numberOfBricks();
 
 } // End init
 
@@ -78,31 +80,47 @@ addListener(window, "load", init); // Se till att init aktiveras då sidan är i
 
 //Funktion för att ta fram värdet av antalet brickor användaren vill spela med
 function numberOfBricks() {
+
     var selIndex;
     var nrBricks;
     selIndex = formElem.selectedIndex;
+    bricks.innerHTML = "";
+
+    if (bricks)
     //Lägger in value för antalet valda brickor ????
-    for (i = 0; i < formElem.length; i++) {
+        for (i = 0; i < formElem.length; i++) {
         formElem[0].value = 16;
         formElem[1].value = 20;
         formElem[2].value = 24;
         formElem[3].value = 30;
         formElem[4].value = 36;
+
     }
     nrBricks = Number(formElem.options[selIndex].value);
     msgElem.innerHTML = nrBricks;
+    displayBricks(nrBricks);
 }
 
+function displayBricks(x) {
+    var i; // Loop-variabel
+    for (i = 0; i < x; i++) {
+        img = document.createElement("img");
+        bricks.appendChild(img);
+        img.setAttribute("class", "brickBack");
+        img.src = "pics/backside.png";
+    }
+
+}
 
 // Funktion för att starta spelet och ta fram slumpmässiga bilder som via händelsehanterare visas då man "flippar" en bricka
 function startGame() {
     var i; // Loop-variabel
-
     pairs = 0; // Vid ny omgång sätts pairs till 0
     gamesPlayed += 1; // Räknar upp varje gång en ny omgång startats
 
-    picsArr = ["0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "10", "10", "11", "11", "12", "12", "13", "13", "14", "14", "15", "15", "16", "16", "17", "17", "18", "18"]; //Array för alla bilder
-
+    var nrArr = ["0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "10", "10", "11", "11", "12", "12", "13", "13", "14", "14", "15", "15", "16", "16", "17", "17", "18", "18"]; //Array för alla bilder
+    picsArr = nrArr.filter(picsNr => picsNr < brickElems.length / 2);
+    console.log(picsArr)
     startGameBtn.disabled = true; // Inaktiverar startGameBtn då nytt spel startas
     formElem.disabled = true; // Inaktiverar menyn för att välja antal brickor då nytt spel startats
 
@@ -119,6 +137,7 @@ function startGame() {
         msgElem.innerHTML = ""; // Tömmer span-taggen vid ny spelomgång
     }
 
+
 } // End startGame
 
 
@@ -128,7 +147,6 @@ function randomPics(elems) { // elems är ref till img-elem för brickorna genom
 
     nextBrickNr = 0; // Startar på 0 vid varje ny spelomgång
     turns = 0; // Startar på 0 vid varje ny spelomgång
-
 
     picsIndex = Math.floor(picsArr.length * Math.random());
     elems.id = "pics/" + picsArr[picsIndex] + ".png"; // Lägger för varje varv i loopen in ny URL i img-elem
@@ -140,7 +158,7 @@ function randomPics(elems) { // elems är ref till img-elem för brickorna genom
 // Funktion för att vända brickorna samt lägga in nytt värde för de brickor som är vända
 function flipBricks() {
     var i; // Loop-variabel
-
+    formElem.disabled = true;
     nextBrickNr++; // Räkna upp med 1 när en bricka vänts
 
     if (nextBrickNr > 2) { // Kontrollera så att endast två brickor är vända
@@ -148,7 +166,7 @@ function flipBricks() {
         return;
     }
 
-    startGameBtn.disabled = true; // Avaktivera startknappen när spelet startats
+
     this.src = this.id; // This.id = elems.id från randomPics så när man klickar på en bricka visas URL för brickan upp
 
     if (!brick1) { // Om brick1 har ett värde/har vänts utför nedan
@@ -188,6 +206,7 @@ function checkBricks() {
         brick1.className = "brickEmpty";
         brick2.src = "pics/empty.png";
         brick2.className = "brickEmpty";
+
         // Sätt img-taggarna för brickor som är par till oklickbara
         if (brick1.src === brick2.src) {
             brick1.style.visibility = "hidden"; // Dölj de img-element med klass brickEmpty

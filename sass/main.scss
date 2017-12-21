@@ -104,11 +104,10 @@ footer {
 
 #nrOfBricksMenu {
     margin-right: 20px;
-    // display: none;
 }
 
 #bricks {
-    width: 320px;
+    width: 100%;
     margin-bottom: 5px;
     @include flexbox;
     @include flex-direction(row);
@@ -126,8 +125,8 @@ footer {
 
 #bricks img {
     float: left;
-    width: 70px;
-    height: 70px;
+    width: 20%;
+    height: 20%;
     margin: 2px;
 }
 
@@ -141,7 +140,6 @@ footer {
 /* Förutom att byta bild i img-taggen, ska du också växla mellan dessa classer. */
 
 .brickBack {
-    border: 3px outset #666;
     padding: 0;
     cursor: pointer;
 }
@@ -150,7 +148,6 @@ footer {
 /* Stil för brick där baksidan viss */
 
 .brickFront {
-    border: 3px outset $celeste;
     background-color: #FFF;
     padding: 0;
     cursor: default;
@@ -161,8 +158,8 @@ footer {
 
 .brickEmpty {
     border: none;
-    padding: 3px;
     cursor: default;
+    content: "V";
 }
 
 
