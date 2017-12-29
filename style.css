@@ -154,9 +154,14 @@ footer {
   border-style: inset; }
 
 #message {
-  padding-top: 2px;
+  clear: both;
   font-size: 1.2em;
-  clear: both; }
+  font-weight: 300;
+  padding: 0 0.5em;
+  margin: 2em 0 0; }
+  @media screen and (max-width: 750px) {
+    #message {
+      text-align: center; } }
 
 .select-bar {
   margin: 1em 0; }

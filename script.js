@@ -141,6 +141,10 @@ $(document).ready(function() {
             icon2.setAttribute("class", "material-icons md-48");
             icon2.innerHTML = "done";
 
+            if (bricks > 20) {
+                $(".material-icons").css("width", "15%");
+            }
+
             // if-sats för att jämföra om par=antal brickor/2. Då anropas funktionen endGame samt countPoints
             if (pairs === (bricks / 2)) {
                 endGame();
