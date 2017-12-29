@@ -210,6 +210,9 @@ footer {
   color: #45CB85;
   font-size: 5rem;
   text-align: center; }
+  @media screen and (max-width: 750px) {
+    #bricks .material-icons {
+      font-size: 2.5rem; } }
 
 /* Varje bricka är en img-tagg */
 /* Olika classer för img-taggarna, beroende på hur brickan visas */
