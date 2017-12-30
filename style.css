@@ -169,7 +169,7 @@ footer {
   clear: both;
   font-size: 1.2em;
   font-weight: 300;
-  padding: 0 0.5em;
+  padding: 0 2em 2em;
   margin: 2em 0 0; }
   @media screen and (max-width: 750px) {
     #message {
