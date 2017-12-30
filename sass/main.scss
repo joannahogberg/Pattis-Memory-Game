@@ -16,18 +16,31 @@ body {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+    background: url(pics/6.png);
 }
 
 header {
     color: #333;
-    padding: 20px;
+    background: white;
+    padding: 1em 1em 1.5em;
+    margin: 1em 0 2em;
     text-align: center;
     position: relative;
+    @media screen and (max-width: 750px) {
+        margin: 1em 0;
+    }
     h1 {
         margin: 0;
-        font-size: 3em;
+        font-size: 5vw;
         font-weight: 900;
         letter-spacing: 0.05em;
+        background: #333;
+        background: url(pics/6.png) -80px -80px;
+        color: #333;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-weight: bold;
+        text-align: center;
         @media screen and (max-width: 750px) {
             font-size: 2em;
             margin: 1em 0 0;
@@ -35,12 +48,8 @@ header {
     }
     .user-info {
         position: absolute;
-        top: 1.9em;
+        top: .5em;
         right: 1.5em;
-        @media screen and (max-width: 750px) {
-            top: 0;
-            right: 0;
-        }
         .account-icon {
             .material-icons {
                 font-size: 3em;
@@ -49,13 +58,15 @@ header {
     }
 }
 
-main {
-    padding: 5px;
-}
-
 .wrapper {
     @include flexbox;
     @include flex-direction(column);
+}
+
+main {
+    background: white;
+    margin-bottom: 1em;
+    min-height: 70vh;
 }
 
 .container {
@@ -63,6 +74,7 @@ main {
     @include flex-direction(row);
     @include justify-content(space-between);
     margin: 0 0 2em;
+    padding: 1em;
     @media screen and (max-width: 750px) {
         @include flexbox;
         @include flex-direction(column);
@@ -70,28 +82,26 @@ main {
     .inner-wrapper {
         font-size: 1.2em;
         font-weight: 300;
-        padding: 0 0.5em;
+        padding: 0 1em;
         @include flexbox;
         @include flex-direction(column);
         @include justify-content(flex-start);
-        // @include align-items(center);
         @include align-content(center);
         @media screen and (max-width: 750px) {
             @include align-items(center);
             text-align: center;
         }
         p {
-            margin: 0.5em 0;
+            margin: 0.2em 0;
         }
     }
 }
 
 footer {
     padding: 5px 10px;
-    margin-top: 20px;
+    margin: 1em 0;
     color: #FFF;
-    font-size: 0.8em;
-    font-style: italic;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -109,9 +119,11 @@ footer {
 #nextBtn {
     padding: 0.4em 1em 0.4em;
     font-size: 1em;
-    background: $celeste;
+    background: #333;
+    background: url(pics/6.png);
     border: 1px solid black;
-    color: black;
+    color: white;
+    font-weight: 900;
     cursor: pointer;
     text-decoration: none;
     border-radius: 5px;
@@ -146,77 +158,37 @@ footer {
     margin-bottom: 5px;
     margin: 0 auto;
     @include flexbox;
-    @include flex-direction(row);
     @include flex-wrap(wrap);
     @include justify-content(center);
-    @include align-items(center);
-    @include align-content(center);
-}
-
-
-/* Elementet där alla brickor finns */
-
-#bricks:after {
-    content: "";
-    clear: both;
-    display: block;
+    @include align-items(stretch);
+    @include align-content(stretch);
 }
 
 #bricks img,
 .material-icons {
-    float: left;
     width: 20%;
     max-width: 150px;
+    max-height: 150px;
     margin: 2px;
 }
 
 #bricks .material-icons {
     color: $celeste;
     font-size: 5rem;
+    line-height: 1.7em;
     text-align: center;
+    vertical-align: middle;
     @media screen and (max-width: 750px) {
-        font-size: 2.5rem;
+        font-size: 3em;
+        line-height: 2em;
     }
 }
-
-
-/* Varje bricka är en img-tagg */
-
-
-/* Olika classer för img-taggarna, beroende på hur brickan visas */
-
-
-/* Förutom att byta bild i img-taggen, ska du också växla mellan dessa classer. */
 
 .brickBack {
     padding: 0;
     cursor: pointer;
 }
 
-
-/* Stil för brick där baksidan viss */
-
-.brickFront {
-    background-color: #FFF;
-    padding: 0;
-    cursor: default;
-}
-
-
-/* Stil för bricka där bilden visas */
-
-.brickEmpty {
-    border: none;
-    cursor: default;
-    content: "V";
-}
-
-
-/* Stil för borttagen bricka */
-
-// .brickBack:hover {
-//     opacity: 0.7;
-// }
 .modal-mask {
     position: fixed;
     z-index: 9998;
@@ -247,12 +219,12 @@ footer {
     .close-icon {
         position: absolute;
         top: 0.5em;
-        right: 0.5em;
+        right: 2.5em;
     }
     .expand-icon {
         position: absolute;
         bottom: 0.5em;
-        right: 2.5em;
+        right: 4.5em;
     }
     p span {
         display: block;

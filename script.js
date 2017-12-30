@@ -38,6 +38,8 @@ $(document).ready(function() {
                 $("#bricks").css("maxWidth", "900px");
                 $("img").css("width", "15%");
             }
+        } else {
+            $("#bricks").css("maxWidth", "750px");
         }
 
         $('#startGameBtn').prop('disabled', false);
@@ -136,9 +138,9 @@ $(document).ready(function() {
             icon2 = document.createElement("i");
             brick1.replaceWith(icon);
             brick2.replaceWith(icon2);
-            icon.setAttribute("class", "material-icons md-48");
+            icon.setAttribute("class", "material-icons");
             icon.innerHTML = "done";
-            icon2.setAttribute("class", "material-icons md-48");
+            icon2.setAttribute("class", "material-icons");
             icon2.innerHTML = "done";
 
             if (bricks > 20) {
