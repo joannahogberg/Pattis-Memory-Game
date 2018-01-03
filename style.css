@@ -197,14 +197,14 @@ footer {
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  -webkit-align-items: stretch;
-  -moz-align-items: stretch;
-  -ms-align-items: stretch;
-  align-items: stretch;
-  -webkit-align-content: stretch;
-  -moz-align-content: stretch;
-  -ms-align-content: stretch;
-  align-content: stretch; }
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -moz-align-content: center;
+  -ms-align-content: center;
+  align-content: center; }
 
 #bricks img,
 .material-icons {
@@ -216,7 +216,7 @@ footer {
 #bricks .material-icons {
   color: #45CB85;
   font-size: 5rem;
-  line-height: 1.7em;
+  line-height: 1.5em;
   text-align: center;
   vertical-align: middle; }
   @media screen and (max-width: 750px) {
