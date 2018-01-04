@@ -26,14 +26,6 @@ $(document).ready(function() {
         for (var i = 0; i < this.value; i++) {
             $("#bricks").append('<img src="pics/backside.png" class="brickBack">');
         }
-        if (this.value > 20) {
-            for (i = 0; i < brickElems.length; i++) {
-                $("#bricks").css("maxWidth", "900px");
-                $("img").css("width", "15%");
-            }
-        } else {
-            $("#bricks").css("maxWidth", "750px");
-        }
         $('#startGameBtn').prop('disabled', false);
 
     });
@@ -86,8 +78,6 @@ $(document).ready(function() {
                 $('#message').text("You can not choose the same brick twice! Choose another brick");
                 return;
             } //End if-sats
-
-
             turns += 1; // Varje gång två brickor vänds räknas det upp som antal gånger ett par brickor vänts
             $('#nextBtn').prop('disabled', false);
             brick2 = this; // Lägger in värdet för den andra vända brickan i brick2          
@@ -205,10 +195,24 @@ $(document).ready(function() {
 });
 
 var app = new Vue({
-
     el: "#userInfo",
     data: {
         collapsed: true,
         showInfo: true
     }
 });
+
+new Vue({
+    el: '#select-nr-bricks',
+    data: {
+        selected: '0',
+        options: [
+            { text: 'Select nr of bricks', value: '0' },
+            { text: '4x4', value: '16' },
+            { text: '4x5', value: '20' },
+            { text: '5x5', value: '25' },
+            { text: '5x6', value: '30' },
+            { text: '6x6', value: '36' }
+        ]
+    }
+})
