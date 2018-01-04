@@ -194,17 +194,13 @@ $(document).ready(function() {
 
 });
 
-var app = new Vue({
-    el: "#userInfo",
-    data: {
-        collapsed: true,
-        showInfo: true
-    }
-});
+
 
 new Vue({
-    el: '#select-nr-bricks',
+    el: '#app',
     data: {
+        collapsed: true,
+        showInfo: true,
         selected: '0',
         options: [
             { text: 'Select nr of bricks', value: '0' },

@@ -152,7 +152,7 @@ footer {
     margin: 1em 0;
 }
 
-#bricks {
+.bricks {
     width: 100%;
     margin-bottom: 5px;
     margin: 0 auto;
@@ -163,7 +163,7 @@ footer {
     @include align-content(center);
 }
 
-.bricks-container {
+.container-small {
     max-width: 750px;
     img,
     .material-icons {
@@ -172,7 +172,7 @@ footer {
     }
 }
 
-.bricks-container-medium {
+.container-medium {
     max-width: 750px;
     img,
     .material-icons {
@@ -181,7 +181,7 @@ footer {
     }
 }
 
-.bricks-container-large {
+.container-large {
     max-width: 900px;
     img,
     .material-icons {
@@ -190,15 +190,25 @@ footer {
     }
 }
 
-#bricks .material-icons {
+.bricks .material-icons {
     color: $celeste;
     font-size: 5rem;
-    line-height: 1.5em;
     text-align: center;
     vertical-align: middle;
     @media screen and (max-width: 750px) {
         font-size: 3em;
-        line-height: 2em;
+        &:after,
+        &:before {
+            content: "";
+            @include flexbox;
+            padding: 11%;
+        }
+    }
+    &:after,
+    &:before {
+        content: "";
+        @include flexbox;
+        padding: 12.3%;
     }
 }
 

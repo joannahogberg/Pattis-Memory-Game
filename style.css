@@ -178,7 +178,7 @@ footer {
 .select-bar {
   margin: 1em 0; }
 
-#bricks {
+.bricks {
   width: 100%;
   margin-bottom: 5px;
   margin: 0 auto;
@@ -205,37 +205,51 @@ footer {
   -ms-align-content: center;
   align-content: center; }
 
-.bricks-container {
+.container-small {
   max-width: 750px; }
-  .bricks-container img,
-  .bricks-container .material-icons {
+  .container-small img,
+  .container-small .material-icons {
     width: 22%;
     margin: 2px; }
 
-.bricks-container-medium {
+.container-medium {
   max-width: 750px; }
-  .bricks-container-medium img,
-  .bricks-container-medium .material-icons {
+  .container-medium img,
+  .container-medium .material-icons {
     width: 18%;
     margin: 2px; }
 
-.bricks-container-large {
+.container-large {
   max-width: 900px; }
-  .bricks-container-large img,
-  .bricks-container-large .material-icons {
+  .container-large img,
+  .container-large .material-icons {
     width: 15%;
     margin: 2px; }
 
-#bricks .material-icons {
+.bricks .material-icons {
   color: #45CB85;
   font-size: 5rem;
-  line-height: 1.5em;
   text-align: center;
   vertical-align: middle; }
   @media screen and (max-width: 750px) {
-    #bricks .material-icons {
-      font-size: 3em;
-      line-height: 2em; } }
+    .bricks .material-icons {
+      font-size: 3em; }
+      .bricks .material-icons:after, .bricks .material-icons:before {
+        content: "";
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        padding: 11%; } }
+  .bricks .material-icons:after, .bricks .material-icons:before {
+    content: "";
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 12.3%; }
 
 .brickBack {
   padding: 0;

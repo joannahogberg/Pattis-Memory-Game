@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
         <header>
             <h1>PATTIS MEMORY GAME</h1>
-            <div id="userInfo" class="user-info">
+            <div class="user-info">
                 <span v-on:click=" showInfo = !showInfo" class="account-icon"><i class="material-icons">{{showInfo ? 'account_box' : ''}}</i></span>
                 <div class="user-info-box" v-bind:class="{'is-showInfo' : showInfo }">
                     <div class="modal-mask">
@@ -56,11 +56,11 @@
                         <button type="button" id="startGameBtn">START GAME</button>
                     </div>
                 </div>
-                <div id="bricks" class="bricks-container" v-if="selected == 16">
+                <div id="bricks" class="bricks container-small" v-if="selected == 16">
                 </div>
-                <div v-else-if="selected < 26" id="bricks" class="bricks-container-medium">
+                <div v-else-if="selected < 26" id="bricks" class="bricks container-medium">
                 </div>
-                <div v-else id="bricks" class="bricks-container-large">
+                <div v-else id="bricks" class="bricks container-large">
                 </div>
             </div>
 
